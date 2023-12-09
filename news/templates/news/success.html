@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+
+{% block title %}Успех{% endblock title %}
+
+{% block content %}
+    <div class="features">
+        <h1>Успешное добавление статьи</h1>
+        <form>
+            <fieldset>
+              <legend>Успешно!</legend>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <a href="{% url 'news:detail' post.id %}" class="btn btn-primary">К новости</a>
+                <a href="{% url 'news:news_home' %}" class="btn btn-primary">Главная</a>
+              </div>
+            </fieldset>
+          </form>
+    </div>
+{% endblock content %}
