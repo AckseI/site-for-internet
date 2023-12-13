@@ -1,4 +1,5 @@
 {% extends "main/base.html" %}
+{% load static %}
 
 {% block title %}Новости на сайте{% endblock title %}
 
@@ -9,10 +10,15 @@
             {% for el in news %}
                 <div class="alert alert-warning">
                     <h3>{{ el.title }}</h3>
+                    <p>{{ el.text }}</p>
+                    <a href="{% url 'news_detail' el.id %}" class="btn btn-warning">Читать детальнее</a>
                 </div>
             {% endfor %}
         {% else %}
             <p>У вас нет записей!</p>
         {% endif %}   
+    </div>
+
+    <div class='wrap'>
     </div>
 {% endblock content %}

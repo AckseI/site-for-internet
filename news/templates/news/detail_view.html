@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+
+{% block title %}Новости на сайте{% endblock title %}
+
+{% block content %}
+    <div class="features">
+        <div class="alert alert-warning">
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.text }}</p>
+            <div class="date-likes">
+                <div>{{ article.date }}</div>
+                <a href="{% url 'likes' article.pk %}">
+                    <button type="button" class="btn btn-outline-danger"><i class="fas fa-heart"></i> {{ article.likes}}</button>
+                </a>
+            </div>
+            <div class="buttons">
+                <a href="{% url 'news_delete' article.id %}" class="btn btn-danger" id="delete">Удалить</a>
+                <a href="{% url 'news_update' article.id %}" class="btn btn-info" id="update">Редактировать</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
